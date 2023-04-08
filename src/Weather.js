@@ -1,68 +1,76 @@
-import React from "react";
+import React, { useState } from "react";
+import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
+import axios from "axios";
+import "./Weather.css";
 
-import './Weather.css';
+export default function Weather(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
+  function handleResponse(response) {
+    console.log(response.data);
 
-export default function Weather() {
-    return(
-    <div className="Weather">
-        <div className="row">
-        <h2>Las Vegas</h2>
-        <h1>Sunny</h1>
-        <img src="dinosaur.jpg" alt="Sunny" />
-        </div>
-        
-        <div className="row">
-            <div className="col-6">
-                <h3>
-                    <span className="temperature">20</span>
-                    <span className="unit">°F</span>
-                </h3>
-                <p>Low: 17° / High: 20°</p>
-            </div>
-            <div className="col-6">
-                <h3>DETAILS</h3>
-                <ul>
-                    <li>Feels Like: 20°</li>
-                    <li>Humidity: 24%</li>
-                    <li>Wind: 5 mph</li>
-                    <li>Visbility: 10 miles</li>
-                </ul>
-            </div>
-        </div>
+    setWeatherData({
+      ready: true,
+      coordinates: response.data.coord,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      description: response.data.weather[0].description,
+      icon: response.data.weather[0].icon,
+      wind: Math.round(response.data.wind.speed),
+      city: response.data.name,
+      feels: Math.round(response.data.main.feels_like),
+      high: Math.round(response.data.main.temp_max),
+      low: Math.round(response.data.main.temp_min),
+    });
+  }
 
-        <div className="row">
-        <div className="col-6">
-                <h3>UV</h3>
-                <p>...</p>
-            </div>
-            <div className="col-6">
-                <h3>AQI</h3>
-                <p>good</p>
-            </div>
-        </div>
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
 
-        <div className="row">
-            <h3>Monday 08:00</h3>
-        </div>
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
 
-        <form>
-            <div className="row">
-                <div className="col-9">
-                <input type="search" 
-                placeholder="City name..."
+  function search() {
+    const apiKey = "898368c8b82c44ea298ea746725fa93a";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  if (weatherData.ready) {
+    return (
+      <div className="Weather">
+        <form onSubmit={handleSubmit}>
+          <div className="row pb-5">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="Enter a city.."
                 className="form-control"
-                autoFocus="on"/>
-                </div>
-
-                <div className="col-3">
-                <input type="submit" 
-                value="Search" 
-                className="btn btn-primary"/>
-                </div>
+                autoFocus="on"
+                onChange={handleCityChange}
+              />
             </div>
+            <div className="col-3">
+              <input
+                type="submit"
+                value="Search"
+                className="btn btn-primary w-100"
+              />
+            </div>
+          </div>
         </form>
-
-    </div>
-    ) 
+        <WeatherInfo data={weatherData} />
+        <WeatherForecast coordinates={weatherData.coordinates} />
+      </div>
+    );
+  } else {
+    search();
+    return "Loading...";
+  }
 }
