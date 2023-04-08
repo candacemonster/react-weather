@@ -5,8 +5,8 @@ export default function App() {
   return (
       <div className="App">
         <div className="container">
-        <Weather defaultCity="New York" />
-        
+        <Weather defaultCity="Las Vegas" />
+
           <footer>
             Coded by{" "}
             <a
@@ -18,11 +18,11 @@ export default function App() {
             </a>{" "}
             open-sourced on{" "}
             <a
-              href="https://github.com/wecodeschool/react-weather-app"
+              href="https://www.candacewoodbury.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              GitHub
+              Github
             </a>{" "}
             and{" "}
             <a

@@ -1,0 +1,30 @@
+.Weather {
+    padding: 15px;
+    border: 1px solid #F0F0F0;
+}
+
+.Weather img {
+    height: 64px;
+    display: block;
+    text-align: center;
+}
+
+.Weather h1 {
+    margin: 10px;
+    font-family: 'Allerta Stencil', sans-serif;
+}
+
+.Weather .btn {
+    background-color: #FFE8DF;
+    border-color: #FFE8DF;
+    color: #888888;
+}
+
+.Weather ul {
+    list-style-type: none;
+  }
+
+.Weather .temperature {
+    font-family: 'Allerta Stencil', sans-serif;
+
+}
