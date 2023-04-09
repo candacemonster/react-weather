@@ -8,3 +8,13 @@
   margin: 15px;
   font-size: small;
 }
+
+a:link {
+  color: #888888;
+  text-decoration: none;
+  
+}
+
+a:hover {
+  color: #FFE8DF;
+}

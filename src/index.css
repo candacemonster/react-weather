@@ -3,12 +3,8 @@ body {
     color: #222222;
 }
 
-a:link {
+a:any-link {
     color: #888888;
     text-decoration: none;
     
-}
-
-a:hover {
-    color: #FFE8DF;
-}
+  }
