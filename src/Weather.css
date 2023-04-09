@@ -15,10 +15,33 @@
 }
 
 .Weather .btn {
-    background-color: #FFE8DF;
-    border-color: #FFE8DF;
     color: #888888;
+    background-color:#FFE8DF;
+    border: 1px solid  #FFE8DF;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    --bs-btn-hover-border-color: #FFE8DF: 
 }
+
+.btn  :hover {
+    color: #FFE8DF;
+    background-color: #888888;
+    border: 1px solid #888888;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    --bs-btn-hover-border-color: #FFE8DF: 
+
+}
+
+
 
 .Weather ul {
     list-style-type: none;
@@ -26,4 +49,20 @@
 
 .Weather .temperature {
     font-family: 'Allerta Stencil', sans-serif;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #888888;
+    background-color: #FFE8DF;
+    background-clip: padding-box;
+    border: 1px solid #888888;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
