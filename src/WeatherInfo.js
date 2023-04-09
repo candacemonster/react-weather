@@ -13,7 +13,7 @@ import { FaChevronDown } from "react-icons/fa";
   export default function WeatherInfo(props) {
     return (
       <div className="WeatherInfo">
-        <div className="row m-2">
+        <div className="row mb-4 p-3">
             <h2>{props.data.city}</h2>
             <h1>{props.data.description}</h1>
             <div>
@@ -21,7 +21,7 @@ import { FaChevronDown } from "react-icons/fa";
             </div>
         </div>
         
-        <div className="row m-3">
+        <div className="row mb-4 p-3">
             <div className="col-6">
                 <h3>
                 <WeatherTemperature fahrenheit={props.data.temperature} />
@@ -38,7 +38,7 @@ import { FaChevronDown } from "react-icons/fa";
             </div>
         </div>
         
-        <div className="row m-3">
+        <div className="row mb-4 p-3">
             <div className="col-6">
                 <h3>UV</h3>
                 <UvIndex />
@@ -49,7 +49,7 @@ import { FaChevronDown } from "react-icons/fa";
             </div>
         </div>
         
-        <div className="row m-3">
+        <div className="row mb-4 p-3">
             <h3><FormattedDate date={props.data.date}/></h3>
         </div>
     

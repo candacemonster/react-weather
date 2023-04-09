@@ -5,3 +5,4 @@ export default function AirQuality() {
         <div className="AirQuality">coming soon...</div>
         );
 }
+
