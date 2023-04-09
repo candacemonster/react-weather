@@ -18,7 +18,7 @@ export default function App() {
             </a>{" "}
             open-sourced on{" "}
             <a
-              href="https://www.candacewoodbury.com"
+              href="https://github.com/candacemonster/react-weather"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -26,7 +26,7 @@ export default function App() {
             </a>{" "}
             and{" "}
             <a
-              href="https://suspicious-beaver-111c4d.netlify.com/"
+              href="https://voluble-lebkuchen-852122.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
             >
