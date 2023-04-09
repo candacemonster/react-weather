@@ -16,8 +16,8 @@ import { FaChevronDown } from "react-icons/fa";
         <div className="row mb-4 p-3">
             <h2>{props.data.city}</h2>
             <h1>{props.data.description}</h1>
-            <div>
-                <WeatherIcon code={props.data.icon} size={52} />
+            <div className="icon p-4">
+                <WeatherIcon code={props.data.icon} size={120} />
             </div>
         </div>
         
@@ -49,7 +49,7 @@ import { FaChevronDown } from "react-icons/fa";
             </div>
         </div>
         
-        <div className="row mb-4 p-3">
+        <div className="row mb-4 p-4">
             <h3><FormattedDate date={props.data.date}/></h3>
         </div>
     
