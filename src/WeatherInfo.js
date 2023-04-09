@@ -2,6 +2,9 @@ import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import AirQuality from "./AirQuality";
+import UvIndex from "./UvIndex";
+
 
 import { FaChevronUp } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
@@ -18,7 +21,7 @@ import { FaChevronDown } from "react-icons/fa";
             </div>
         </div>
         
-        <div className="row m-2">
+        <div className="row m-3">
             <div className="col-6">
                 <h3>
                 <WeatherTemperature fahrenheit={props.data.temperature} />
@@ -35,18 +38,18 @@ import { FaChevronDown } from "react-icons/fa";
             </div>
         </div>
         
-        <div className="row m-2">
+        <div className="row m-3">
             <div className="col-6">
                 <h3>UV</h3>
-                <p>...</p>
+                <UvIndex />
             </div>
             <div className="col-6">
                 <h3>AQI</h3>
-                <p>good</p>
+                <AirQuality />
             </div>
         </div>
         
-        <div className="row m-2">
+        <div className="row m-3">
             <h3><FormattedDate date={props.data.date}/></h3>
         </div>
     
