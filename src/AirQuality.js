@@ -42,7 +42,7 @@ export default function AirQuality(props) {
         let apiKey = "898368c8b82c44ea298ea746725fa93a";
         let longitude = coordinates.lon;
         let latitude = coordinates.lat;
-        let apiUrl = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+        let apiUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
         
         axios.get(apiUrl).then(handleResponse);
         return null;
