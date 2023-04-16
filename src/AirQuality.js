@@ -12,6 +12,11 @@ export default function AirQuality(props) {
         setLoaded(true);
     }
 
+    useEffect(() => {
+        setLoaded(false);
+        setCoordinates(props.coordinates);
+    }, [props.coordinates]);
+
     function getAirQuality(aqi) {
         switch (aqi) {
             case 1:
@@ -28,11 +33,6 @@ export default function AirQuality(props) {
                 return null;
         }
     }
-
-    useEffect(() => {
-        setLoaded(false);
-        setCoordinates(props.coordinates);
-    }, [props.coordinates]);
 
     if (loaded) {
         return (
