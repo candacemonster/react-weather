@@ -26,9 +26,9 @@ import { FaChevronDown } from "react-icons/fa";
             
             <div className="col-6">
                 <ul>
-                    <li>Feels Like: {props.data.feels}°F</li>
-                    <li>Humidity: {props.data.humidity}%</li>
-                    <li>Wind: {props.data.wind} mph</li>
+                    <li>Feels Like:{" "}{props.data.feels}°F</li>
+                    <li>Humidity:{" "}{props.data.humidity}%</li>
+                    <li>Wind:{" "}{props.data.wind}{" "}mph</li>
                 </ul>
             </div>
         </div>
