@@ -3,12 +3,15 @@ import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import "./Weather.css";
+import UvIndex from "./UvIndex";
+import AirQuality from "./AirQuality";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
+    console.log(response.data);
     setWeatherData({
       ready: true,
       coordinates: response.data.coord,
@@ -64,6 +67,18 @@ export default function Weather(props) {
           </div>
         </form>
         <WeatherInfo data={weatherData} />
+
+        <div className="row mb-4 p-3">
+            <div className="col-6">
+                <h3>UV</h3>
+                <UvIndex coordinates={weatherData.coordinates}/>
+            </div>
+            <div className="col-6">
+                <h3>AQI</h3>
+                <AirQuality />
+            </div>
+        </div>
+        
         <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );

@@ -2,8 +2,6 @@ import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
-import AirQuality from "./AirQuality";
-import UvIndex from "./UvIndex";
 
 
 import { FaChevronUp } from "react-icons/fa";
@@ -35,17 +33,6 @@ import { FaChevronDown } from "react-icons/fa";
                     <li>Humidity: {props.data.humidity}%</li>
                     <li>Wind: {props.data.wind} mph</li>
                 </ul>
-            </div>
-        </div>
-        
-        <div className="row mb-4 p-3">
-            <div className="col-6">
-                <h3>UV</h3>
-                <UvIndex />
-            </div>
-            <div className="col-6">
-                <h3>AQI</h3>
-                <AirQuality />
             </div>
         </div>
         
