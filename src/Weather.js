@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import "./Weather.css";
 import UvIndex from "./UvIndex";
@@ -74,8 +75,13 @@ export default function Weather(props) {
             </div>
             <div className="col-6">
                 <h3>AQI</h3>
-                <AirQuality />
+                <AirQuality coordinates={weatherData.coordinates}/>
             </div>
+        </div>
+
+                
+        <div className="row mb-4 p-4">
+            <h3><FormattedDate date={weatherData.date}/></h3>
         </div>
         
         <WeatherForecast coordinates={weatherData.coordinates} />

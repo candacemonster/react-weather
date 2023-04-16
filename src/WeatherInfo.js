@@ -1,9 +1,6 @@
 import React from "react";
-import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
-
-
 import { FaChevronUp } from "react-icons/fa";
 import { FaChevronDown } from "react-icons/fa";
 
@@ -35,11 +32,6 @@ import { FaChevronDown } from "react-icons/fa";
                 </ul>
             </div>
         </div>
-        
-        <div className="row mb-4 p-4">
-            <h3><FormattedDate date={props.data.date}/></h3>
-        </div>
-    
 </div>
 ) 
 }
