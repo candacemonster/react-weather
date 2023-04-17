@@ -46,6 +46,7 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
+        <div className="form-inline">
         <form onSubmit={handleSubmit}>
           <div className="row pb-5">
             <div className="col-9">
@@ -66,6 +67,8 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
+        </div>
+        
         <WeatherInfo data={weatherData} />
 
         <div className="row mb-4 p-3">

@@ -1,10 +1,14 @@
 .App {
-  margin: 15px;
+  margin: 10px;
   font-family:'Julius Sans One', sans-serif;
   text-align: center;
 }
 
+.App .container {
+  margin: 0 auto;
+}
+
 .App footer {
-  margin: 15px;
+  margin: 10px;
   font-size: small;
 }
