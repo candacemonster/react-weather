@@ -7,7 +7,8 @@ export default function UvIndex(props) {
   let [coordinates, setCoordinates] = useState(props.coordinates);
 
   function handleResponse(response) {
-    setUvData(response.data.daily[0].uvi);
+    console.log(response.data);
+    setUvData(response.data.current.uvi);
     setLoaded(true);
   }
 
